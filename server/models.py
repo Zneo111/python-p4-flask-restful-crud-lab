@@ -12,5 +12,8 @@ class Plant(db.Model, SerializerMixin):
     price = db.Column(db.Float)
     is_in_stock = db.Column(db.Boolean)
 
+    serialize_rules = ('-some_relationship',)  # Update or remove if not needed
+
     def __repr__(self):
         return f'<Plant {self.name} | In Stock: {self.is_in_stock}>'
+    
